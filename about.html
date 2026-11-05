@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — ES Photography</title>
+<meta name="description" content="Eugene Stillmark — architectural and commercial real estate photographer in Dallas–Fort Worth, Texas.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #b8b8b5; color: #111; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 24px 48px; }
+  .logo { font-size: 18px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; color: #111; }
+  nav a { margin-left: 32px; color: #111; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+  nav a:hover { text-decoration: underline; }
+  main { flex: 1; padding: 64px 48px; display: flex; gap: 56px; align-items: flex-start; max-width: 1100px; }
+  .portrait { width: 360px; max-width: 100%; height: auto; display: block; }
+  .text { max-width: 560px; }
+  h1 { font-size: 36px; font-weight: 700; letter-spacing: -1px; margin-bottom: 8px; }
+  .role { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 32px; }
+  p.body { font-size: 17px; line-height: 1.7; margin-bottom: 20px; }
+  .btn { display: inline-block; margin-top: 24px; padding: 16px 40px; border: 2px solid #111; color: #111; text-decoration: none; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; }
+  .btn:hover { background: #111; color: #b8b8b5; }
+  footer { padding: 32px 48px; font-size: 12px; letter-spacing: 1px; color: #333; border-top: 1px solid #888; }
+  @media (max-width: 800px) { header { padding: 16px 20px; flex-direction: column; gap: 12px; } nav a { margin: 0 8px; font-size: 11px; } main { flex-direction: column; padding: 40px 20px; gap: 32px; } .portrait { width: 100%; } }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">ES Photography</a>
+  <nav>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="credentials.html">Credentials</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="pay.html">Payment</a>
+  </nav>
+</header>
+<main>
+  <img class="portrait" src="portrait.jpg" alt="Eugene Stillmark" onerror="this.style.display='none'">
+  <div class="text">
+    <h1>Eugene Stillmark</h1>
+    <p class="role">Architectural &amp; Commercial Photographer</p>
+    <p class="body">I photograph commercial architecture in Dallas–Fort Worth. My background is fine art photography, and I bring the same discipline to every building: clean geometry, true vertical lines and honest light.</p>
+    <p class="body">Exteriors are shot with tilt-shift lenses, towers from the air at mid-building height, and interiors with natural light first. The goal is simple: images that show a property exactly as it deserves to be seen.</p>
+    <a class="btn" href="book.html">Book a shoot</a>
+  </div>
+</main>
+<footer>© ES Photography LLC · Serving Fort Worth, Dallas, Plano, Frisco, Irving, Las Colinas, Richardson, Arlington, Addison, Southlake, Grapevine, Bedford, Denton and McKinney</footer>
+</body>
+</html>
