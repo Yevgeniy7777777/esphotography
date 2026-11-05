@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Shoot — ES Photography</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #b8b8b5; color: #000; font-family: Helvetica, Arial, sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; }
+  .logo { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; color: #000; }
+  nav a { margin-left: 28px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; color: #000; }
+  main { flex: 1; padding: 40px 48px 64px; max-width: 720px; }
+  h1 { font-size: 36px; font-weight: 400; margin-bottom: 16px; }
+  .intro { font-size: 16px; line-height: 1.6; margin-bottom: 40px; }
+  label { display: block; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin: 24px 0 8px; }
+  input, select, textarea { width: 100%; padding: 12px 0; font: 16px Helvetica, Arial, sans-serif; color: #000; background: transparent; border: none; border-bottom: 1px solid #000; border-radius: 0; outline: none; }
+  textarea { min-height: 96px; resize: vertical; }
+  .checks { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 8px; }
+  .checks label { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 14px; letter-spacing: 0; text-transform: none; }
+  .checks input { width: auto; }
+  button { margin-top: 40px; padding: 16px 40px; background: #000; color: #b8b8b5; border: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; }
+  #status { margin-top: 24px; font-size: 16px; }
+  footer { padding: 28px 48px; font-size: 12px; letter-spacing: 1px; }
+  @media (max-width: 600px) { header, main, footer { padding-left: 24px; padding-right: 24px; } h1 { font-size: 28px; } }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">ES Photography</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="mailto:info@esphotography.pro">Contact</a>
+  </nav>
+</header>
+<main>
+  <h1>Book a Shoot</h1>
+  <p class="intro">Tell us about the property. You will receive a quote and available dates within one business day.</p>
+  <form id="booking" action="https://formspree.io/f/mdeebppb" method="POST">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" required>
+
+    <label for="company">Company</label>
+    <input id="company" name="company" type="text">
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required>
+
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel">
+
+    <label for="address">Property address</label>
+    <input id="address" name="property_address" type="text" required>
+
+    <label for="type">Property type</label>
+    <select id="type" name="property_type">
+      <option>Office</option>
+      <option>Industrial / Warehouse</option>
+      <option>Retail</option>
+      <option>Restaurant / Hospitality</option>
+      <option>Other</option>
+    </select>
+
+    <label>Services</label>
+    <div class="checks">
+      <label><input type="checkbox" name="services" value="Exterior photography"> Exterior</label>
+      <label><input type="checkbox" name="services" value="Interior photography"> Interior</label>
+      <label><input type="checkbox" name="services" value="Drone / Aerial"> Drone / Aerial</label>
+    </div>
+
+    <label for="date">Preferred date</label>
+    <input id="date" name="preferred_date" type="date">
+
+    <label for="notes">Notes</label>
+    <textarea id="notes" name="notes"></textarea>
+
+    <button type="submit">Send request</button>
+    <p id="status"></p>
+  </form>
+</main>
+<footer>© ES Photography LLC · Dallas–Fort Worth, Texas · info@esphotography.pro · (682) 394-1344</footer>
+<script>
+  const form = document.getElementById('booking');
+  const status = document.getElementById('status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        form.reset();
+        status.textContent = 'Thank you. Your request has been received — we will reply within one business day.';
+      } else {
+        status.textContent = 'Something went wrong. Please email info@esphotography.pro.';
+      }
+    } catch (err) {
+      status.textContent = 'Something went wrong. Please email info@esphotography.pro.';
+    }
+  });
+</script>
+</body>
+</html>
