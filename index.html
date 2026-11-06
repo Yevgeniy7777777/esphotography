@@ -17,13 +17,10 @@
   .hero p { margin-top: 16px; font-size: 15px; letter-spacing: 3px; text-transform: uppercase; }
   .btn { display: inline-block; margin-top: 40px; padding: 16px 40px; border: 2px solid #111; color: #111; text-decoration: none; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; width: fit-content; }
   .btn:hover { background: #111; color: #b8b8b5; }
-  footer { padding: 32px 48px; font-size: 12px; letter-spacing: 1px; color: #333; border-top: 1px solid #888; }
-  @media (max-width: 700px) {
-    header { padding: 16px 20px; flex-direction: column; gap: 12px; }
-    nav a { margin: 0 8px; font-size: 11px; }
-    .hero { padding: 0 20px 64px; }
-    .hero h1 { font-size: 34px; }
-  }
+  footer { padding: 32px 48px; font-size: 12px; letter-spacing: 1px; color: #333; border-top: 1px solid #888; line-height: 1.8; }
+  .links { margin-top: 8px; }
+  .links a { color: #333; margin-right: 20px; }
+  @media (max-width: 700px) { header { padding: 16px 20px; flex-direction: column; gap: 12px; } nav a { margin: 0 8px; font-size: 11px; } .hero { padding: 0 20px 64px; } .hero h1 { font-size: 34px; } footer { padding: 24px 20px; } }
 </style>
 </head>
 <body>
@@ -35,16 +32,17 @@
     <a href="credentials.html">Credentials</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-   <a href="pay.html">Payment</a>
+    <a href="pay.html">Payment</a>
   </nav>
 </header>
 <section class="hero">
-  <h1>Architectural & Commercial Real Estate Photography</h1>
+  <h1>Architectural &amp; Commercial Real Estate Photography</h1>
   <p>Dallas–Fort Worth, Texas</p>
   <a class="btn" href="book.html">Book a shoot</a>
 </section>
 <footer>
   © ES Photography LLC · Serving Fort Worth, Dallas, Plano, Richardson, Bedford, Arlington, Irving and surrounding areas
- <</footer>
+  <div class="links"><a href="prep.html">Shoot Prep</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div>
+</footer>
 </body>
 </html>
