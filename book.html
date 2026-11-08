@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,12 +62,21 @@
       <option>Other</option>
     </select>
 
+    <label for="sqft">Approximate size (sq ft)</label>
+    <input id="sqft" name="square_feet" type="number" min="0" placeholder="e.g. 8,000">
+
     <label>Services</label>
     <div class="checks">
       <label><input type="checkbox" name="services" value="Exterior photography"> Exterior</label>
       <label><input type="checkbox" name="services" value="Interior photography"> Interior</label>
       <label><input type="checkbox" name="services" value="Drone / Aerial"> Drone / Aerial</label>
     </div>
+
+    <label for="ground">Ground photos needed (approx.)</label>
+    <input id="ground" name="ground_photos" type="number" min="0" placeholder="e.g. 15">
+
+    <label for="aerial">Aerial photos needed (approx.)</label>
+    <input id="aerial" name="aerial_photos" type="number" min="0" placeholder="e.g. 5">
 
     <label for="use">Intended use</label>
     <select id="use" name="intended_use">
